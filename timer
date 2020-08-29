@@ -1,0 +1,14 @@
+#!/bin/bash
+
+date1=$(date +%s);
+while true; do
+    now=$(date +%s)
+    secs=$((now - date1))
+    echo -ne  "$(date -u --date @$secs +%H:%M:%S)\r"
+    if [[ $1 && $secs -ge $1 ]]; then
+        echo -e  "$(date -u --date @$secs +%H:%M:%S)"
+        echo -e  "\a"
+        break
+    fi
+    sleep 0.1;
+done
