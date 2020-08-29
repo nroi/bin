@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Repeats the given command until it fails, i.e., returns non-zero exit code.
+
+while ( "$@" ); do
+    /bin/true
+done
